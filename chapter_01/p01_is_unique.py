@@ -4,7 +4,7 @@ from collections import defaultdict
 
 
 # O(N)
-def is_unique_chars_algorithmic(string):
+def is_unique_chars_algorithmic(string: str) -> bool:
     # Assuming character set is ASCII (128 characters)
     if len(string) > 128:
         return False
@@ -23,12 +23,12 @@ def is_unique_chars_algorithmic(string):
 
 
 # O(1)
-def is_unique_chars_pythonic(string):
+def is_unique_chars_pythonic(string: str) -> bool:
     return len(set(string)) == len(string)
 
 
 # O(N)
-def is_unique_bit_vector(string):
+def is_unique_bit_vector(string: str) -> bool:
     """Uses bitwise operation instead of extra data structures."""
     # Assuming character set is ASCII (128 characters)
     if len(string) > 128:
