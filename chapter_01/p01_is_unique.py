@@ -74,7 +74,6 @@ def is_unique_chars_sorting(string: str) -> bool:
     return True
 
 
-# O(N*N)
 class Test(unittest.TestCase):
     test_cases = [
         ("abcd", True),
@@ -93,7 +92,8 @@ class Test(unittest.TestCase):
         is_unique_chars_using_set,
         is_unique_chars_sorting,
     ]
-
+    
+    # O(N*N)
     def test_is_unique_chars(self):
         num_runs = 1000
         function_runtimes = defaultdict(float)
