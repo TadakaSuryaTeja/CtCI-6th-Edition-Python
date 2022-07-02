@@ -3,6 +3,7 @@ import unittest
 from collections import defaultdict
 
 
+# O(N)
 def is_unique_chars_algorithmic(string):
     # Assuming character set is ASCII (128 characters)
     if len(string) > 128:
@@ -21,10 +22,12 @@ def is_unique_chars_algorithmic(string):
     return True
 
 
+# O(1)
 def is_unique_chars_pythonic(string):
     return len(set(string)) == len(string)
 
 
+# O(N)
 def is_unique_bit_vector(string):
     """Uses bitwise operation instead of extra data structures."""
     # Assuming character set is ASCII (128 characters)
@@ -40,6 +43,7 @@ def is_unique_bit_vector(string):
     return True
 
 
+# O(N)
 def is_unique_chars_using_dictionary(string: str) -> bool:
     character_counts = {}
     for char in string:
@@ -49,6 +53,7 @@ def is_unique_chars_using_dictionary(string: str) -> bool:
     return True
 
 
+# O(N)
 def is_unique_chars_using_set(string: str) -> bool:
     characters_seen = set()
     for char in string:
@@ -69,6 +74,7 @@ def is_unique_chars_sorting(string: str) -> bool:
     return True
 
 
+# O(N*N)
 class Test(unittest.TestCase):
     test_cases = [
         ("abcd", True),
