@@ -3,7 +3,7 @@ import unittest
 from collections import Counter
 
 
-def check_permutation_by_sort(s1, s2):
+def check_permutation_by_sort(s1:str, s2:str) -> bool:
     if len(s1) != len(s2):
         return False
     s1, s2 = sorted(s1), sorted(s2)
@@ -13,7 +13,7 @@ def check_permutation_by_sort(s1, s2):
     return True
 
 
-def check_permutation_by_count(str1, str2):
+def check_permutation_by_count(str1:str, str2:str) -> bool:
     if len(str1) != len(str2):
         return False
     counter = [0] * 256
@@ -26,7 +26,7 @@ def check_permutation_by_count(str1, str2):
     return True
 
 
-def check_permutation_pythonic(str1, str2):
+def check_permutation_pythonic(str1:str, str2:str) -> bool:
     if len(str1) != len(str2):
         return False
 
