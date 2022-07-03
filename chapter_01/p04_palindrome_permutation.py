@@ -4,11 +4,11 @@ import unittest
 from collections import Counter
 
 
-def clean_phrase(phrase):
+def clean_phrase(phrase:str) -> str:
     return [c for c in phrase.lower() if c in string.ascii_lowercase]
 
 
-def is_palindrome_permutation(phrase):
+def is_palindrome_permutation(phrase:str) ->bool:
     """checks if a string is a permutation of a palindrome"""
     table = [0 for _ in range(ord("z") - ord("a") + 1)]
     countodd = 0
@@ -24,7 +24,7 @@ def is_palindrome_permutation(phrase):
     return countodd <= 1
 
 
-def char_number(c):
+def char_number(c:str) -> int:
     a = ord("a")
     z = ord("z")
     upper_a = ord("A")
@@ -39,7 +39,7 @@ def char_number(c):
     return -1
 
 
-def is_palindrome_bit_vector(phrase):
+def is_palindrome_bit_vector(phrase:str) -> bool:
     """checks if a string is a permutation of a palindrome"""
     r = 0
     for c in clean_phrase(phrase):
@@ -52,7 +52,7 @@ def is_palindrome_bit_vector(phrase):
     return (r - 1) & r == 0
 
 
-def is_palindrome_permutation_pythonic(phrase):
+def is_palindrome_permutation_pythonic(phrase:str) -> bool:
     """function checks if a string is a permutation of a palindrome or not"""
     counter = Counter(clean_phrase(phrase))
     return sum(val % 2 for val in counter.values()) <= 1
