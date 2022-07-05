@@ -1,8 +1,8 @@
 import time
 import unittest
 
-
-def compress_string(string):
+# O(N)
+def compress_string(string: str) -> str:
     compressed = []
     counter = 0
 
@@ -33,6 +33,7 @@ class Test(unittest.TestCase):
         compress_string,
     ]
 
+    # O(N*N)
     def test_string_compression(self):
         for f in self.testable_functions:
             start = time.perf_counter()
