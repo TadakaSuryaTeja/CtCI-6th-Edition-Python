@@ -3,7 +3,7 @@ import time
 import unittest
 
 
-def are_one_edit_different(s1, s2):
+def are_one_edit_different(s1: str, s2: str) -> bool:
     """Check if a string can converted to another string with a single edit"""
     if len(s1) == len(s2):
         return one_edit_replace(s1, s2)
@@ -14,7 +14,7 @@ def are_one_edit_different(s1, s2):
     return False
 
 
-def one_edit_replace(s1, s2):
+def one_edit_replace(s1: str, s2: str) -> bool:
     edited = False
     for c1, c2 in zip(s1, s2):
         if c1 != c2:
@@ -24,7 +24,7 @@ def one_edit_replace(s1, s2):
     return True
 
 
-def one_edit_insert(s1, s2):
+def one_edit_insert(s1: str, s2: str) -> bool:
     edited = False
     i, j = 0, 0
     while i < len(s1) and j < len(s2):
