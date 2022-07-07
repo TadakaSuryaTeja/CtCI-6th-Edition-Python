@@ -26,6 +26,12 @@ def urlify_pythonic(text, length):
     return text[:length].replace(" ", "%20")
 
 
+def urlify_map_lambda(text, length):
+    """solution using anonymous function"""
+    str1 = list(map(lambda x: x.replace(" ", "%20"), text[:length]))
+    return "".join(str1)
+
+
 class Test(unittest.TestCase):
     """Test Cases"""
 
@@ -35,7 +41,7 @@ class Test(unittest.TestCase):
         (" a b    ", 4): "%20a%20b",
         (" a b       ", 5): "%20a%20b%20",
     }
-    testable_functions = [urlify_algo, urlify_pythonic]
+    testable_functions = [urlify_algo, urlify_pythonic, urlify_map_lambda]
 
     def test_urlify(self):
         for urlify in self.testable_functions:
